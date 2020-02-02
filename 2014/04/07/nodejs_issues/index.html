@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>[Node.js] 刚开机Node无法使用？ | 小小白菜</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="">
+    <meta name="description" content="昨天兴致勃勃的玩了一天的node，今天开机想接着爽一把，结果提示让我安装Node，我去，昨天刚安装了，怎么还会出这样的提示？其实这真不是问题，看了一下nvm命令的帮助，so easy！ 错误：（试了两次） sunnylee@MyComputer:~$ node The program &amp;apos;node&amp;apos; can be found in the following packages:">
+<meta property="og:type" content="article">
+<meta property="og:title" content="[Node.js] 刚开机Node无法使用？">
+<meta property="og:url" content="http://yoursite.com/2014/04/07/nodejs_issues/index.html">
+<meta property="og:site_name" content="小小白菜">
+<meta property="og:description" content="昨天兴致勃勃的玩了一天的node，今天开机想接着爽一把，结果提示让我安装Node，我去，昨天刚安装了，怎么还会出这样的提示？其实这真不是问题，看了一下nvm命令的帮助，so easy！ 错误：（试了两次） sunnylee@MyComputer:~$ node The program &amp;apos;node&amp;apos; can be found in the following packages:">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2014-04-07T02:22:14.000Z">
+<meta property="article:modified_time" content="2020-02-02T03:38:03.042Z">
+<meta property="article:author" content="Byron Li">
+<meta name="twitter:card" content="summary">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Byron Li</h5>
+          <a href="mailto:ljgstudy@163.com" title="ljgstudy@163.com" class="mail">ljgstudy@163.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                归档
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                分类
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">[Node.js] 刚开机Node无法使用？</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">[Node.js] 刚开机Node无法使用？</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2014-04-07T02:22:14.000Z" itemprop="datePublished" class="page-time">
+  2014-04-07
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/nodejs/">nodejs</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+
+<article id="post-nodejs_issues"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">[Node.js] 刚开机Node无法使用？</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2014-04-07 10:22:14" datetime="2014-04-07T02:22:14.000Z"  itemprop="datePublished">2014-04-07</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/nodejs/">nodejs</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <p>昨天兴致勃勃的玩了一天的node，今天开机想接着爽一把，结果提示让我安装Node，我去，昨天刚安装了，怎么还会出这样的提示？其实这真不是问题，看了一下nvm命令的帮助，so easy！</p>
+<p><strong>错误：</strong>（试了两次）</p>
+<pre><code>sunnylee@MyComputer:~$ node
+The program &apos;node&apos; can be found in the following packages:
+* node
+* nodejs
+Try: sudo apt-get install &amp;lt;selected package&amp;gt;
+sunnylee@MyComputer:~$ node
+The program &apos;node&apos; can be found in the following packages:
+* node
+* nodejs
+Try: sudo apt-get install &amp;lt;selected package&amp;gt;</code></pre><p><strong>环境：</strong>Ubuntu  12.04</p>
+<p><strong>场景还原：</strong></p>
+<p>1.开机；</p>
+<p>2.打开终端，键入命令node，出现上述错误。</p>
+<p><strong>错误原因：</strong>使用NVM命令（nvm use 0.11.11）选择安装过的版本, 问题即可解决。</p>
+<p><strong>附：</strong></p>
+<p>NVM命令详解：</p>
+<p><strong>Usage:</strong><br><strong>nvm help</strong> Show this message<br><strong>nvm –version</strong> Print out the latest released version of nvm<br><strong>nvm install [-s] &lt;version&gt;</strong> Download and install a &lt;version&gt;, [-s] from source<br><strong>nvm uninstall &lt;version&gt;</strong> Uninstall a version<br><strong>nvm use &lt;version&gt;</strong> Modify PATH to use &lt;version&gt;<br><strong>nvm run &lt;version&gt; [&lt;args&gt;]</strong> Run &lt;version&gt; with &lt;args&gt; as arguments<br><strong>nvm current</strong> Display currently activated version<br><strong>nvm ls</strong> List installed versions<br><strong>nvm ls &lt;version&gt;</strong> List versions matching a given description<br><strong>nvm ls-remote</strong> List remote versions available for install<br><strong>nvm deactivate</strong> Undo effects of NVM on current shell<br><strong>nvm alias [&lt;pattern&gt;]</strong> Show all aliases beginning with &lt;pattern&gt;<br><strong>nvm alias &lt;name&gt; &lt;version&gt;</strong> Set an alias named &lt;name&gt; pointing to &lt;version&gt;<br><strong>nvm unalias &lt;name&gt;</strong> Deletes the alias named &lt;name&gt;<br><strong>nvm copy-packages &lt;version&gt;</strong> Install global NPM packages contained in &lt;version&gt; to current version</p>
+<p><strong>Example:</strong><br><strong>nvm install v0.10.24</strong> Install a specific version number<br><strong>nvm use 0.10</strong> Use the latest available 0.10.x release<br><strong>nvm run 0.10.24 myApp.js</strong> Run myApp.js using node v0.10.24<br><strong>nvm alias default 0.10.24</strong> Set default node version on a shell</p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    Last updated: <time datetime="2020-02-02T03:38:03.042Z" itemprop="dateUpdated">2020-02-02 11:38:03</time>
+</span><br>
+
+
+        
+        这里可以写作者留言，标签和 hexo 中所有变量及辅助函数等均可调用，示例：<a href="/2014/04/07/nodejs_issues/" target="_blank" rel="external">http://yoursite.com/2014/04/07/nodejs_issues/</a>
+        
+    </div>
+    
+    <footer>
+        <a href="http://yoursite.com">
+            <img src="/img/avatar.jpg" alt="Byron Li">
+            Byron Li
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2014/04/07/nodejs_issues/&title=《[Node.js] 刚开机Node无法使用？》 — 小小白菜&pic=http://yoursite.com/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2014/04/07/nodejs_issues/&title=《[Node.js] 刚开机Node无法使用？》 — 小小白菜&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2014/04/07/nodejs_issues/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《[Node.js] 刚开机Node无法使用？》 — 小小白菜&url=http://yoursite.com/2014/04/07/nodejs_issues/&via=http://yoursite.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2014/04/07/nodejs_issues/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2014/04/07/nodejs_module/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">[Node.js] Q＆A about module</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2014/04/06/nodejs_nvmissues/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">[Node.js] 错误 NVM Needs curl to process!</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+<section class="comments" id="comments">
+    <div id="gitment_thread"></div>
+    <link rel="stylesheet" href="//unpkg.com/gitment/style/default.css">
+    <script src="//unpkg.com/gitment/dist/gitment.browser.js"></script>
+    <script>
+        var gitment = new Gitment({
+            owner: 'ljgstudy',
+            repo: 'ljgstudy.github.io',
+            oauth: {
+                client_id: 'fe21ea48ed031c2dee62',
+                client_secret: 'a3b8aea009fcc3697ebddd57ebf22fdc916ce76c',
+            },
+        })
+        gitment.render('comments')
+    </script>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        谢谢大爷~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/img/wechat.jpg" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check"
+                data-wechat="/img/wechat.jpg" data-alipay="/img/alipay.jpg">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+            <span>This blog is licensed under a <a rel="license noopener" href="https://creativecommons.org/licenses/by/4.0/" target="_blank">Creative Commons Attribution 4.0 International License</a>.</span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>Byron Li &copy; 2015 - 2020</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2014/04/07/nodejs_issues/&title=《[Node.js] 刚开机Node无法使用？》 — 小小白菜&pic=http://yoursite.com/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2014/04/07/nodejs_issues/&title=《[Node.js] 刚开机Node无法使用？》 — 小小白菜&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2014/04/07/nodejs_issues/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《[Node.js] 刚开机Node无法使用？》 — 小小白菜&url=http://yoursite.com/2014/04/07/nodejs_issues/&via=http://yoursite.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2014/04/07/nodejs_issues/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://yoursite.com/2014/04/07/nodejs_issues/" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '死鬼去哪里了！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '(つェ⊂)咦!又好了!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>
